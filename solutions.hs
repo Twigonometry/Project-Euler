@@ -2,6 +2,8 @@
 Assorted solutions for Project Euler problems -}
 
 module Solutions where
+    import Utils
+
     {- problem 1
     sum of all multiples of 3 and 5 below n -}
     problem1 :: Int -> Int
