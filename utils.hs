@@ -7,3 +7,8 @@ module Utils where
     fibN 1 = 1
     fibN 2 = 2
     fibN n = fibN (n-1) + fibN (n-2)
+
+    --definition of infinite fibs series, to be evaluated lazily
+    --from https://stackoverflow.com/questions/1105765/generating-fibonacci-numbers-in-haskell
+    fibs :: [Int]
+    fibs = 1 : 1 : zipWith (+) fibs (tail fibs)
