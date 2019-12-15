@@ -14,7 +14,19 @@ def problem2matrix(n):
     matN = np.linalg.matrix_power(mat, n)
     return matN[0,1]
 
+def problem2():
+    sum = 0
+    i=1
+    currentFib = problem2memo(i)
+    while(currentFib < 4000000):
+        if currentFib % 2 == 0:
+            sum += currentFib
+        i+=1
+        currentFib = problem2memo(i)
+
+    return sum
+
 def main():
-    print(problem2memo(10))
+    print(problem2())
 
 main()
