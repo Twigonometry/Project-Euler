@@ -35,7 +35,14 @@ def problem9():
             if (a**2 + b**2 == c**2):
                 return a*b*c
 
+def nPrimes(n):
+    for i in range(n):
+        if pyutils.isPrime(i):
+            print(i)
+
 def main():
-    print(problem9())
+    #print(pyutils.isPrime(9))
+    #print(pyutils.isPrime(15))
+    print(nPrimes(50))
 
 main()
