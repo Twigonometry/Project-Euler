@@ -12,3 +12,6 @@ module Utils where
     --from https://stackoverflow.com/questions/1105765/generating-fibonacci-numbers-in-haskell
     fibs :: [Int]
     fibs = 1 : 1 : zipWith (+) fibs (tail fibs)
+
+    pythTrips :: [(Int, Int, Int)]
+    pythTrips = [(a, b, c) | a <- [1..1000], b <- [1..1000], c <- [0..1000], a^2 + b^2 == c^2 ]

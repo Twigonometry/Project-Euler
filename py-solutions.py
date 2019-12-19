@@ -1,4 +1,5 @@
 import numpy as np
+import pyutils
 
 #we can use memoization to tabulate previously calculated fibs
 #source: https://stackoverflow.com/questions/18172257/efficient-calculation-of-fibonacci-series
@@ -26,7 +27,15 @@ def problem2():
 
     return sum
 
+def problem9():
+    for a in range(1, 1000):
+        for b in range(1, 1000):
+            #we know the form of c - don't need to loop
+            c = 1000 - a - b
+            if (a**2 + b**2 == c**2):
+                return a*b*c
+
 def main():
-    print(problem2())
+    print(problem9())
 
 main()
