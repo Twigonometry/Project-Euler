@@ -21,7 +21,7 @@ module Solutions where
     problem2' n = sum([x | x <- fibs, x < n, x `mod` 2 == 0])
 
     {- problem 9
-    for the pythagorean triplet a + b + c = 1000, find the product abc
-    code produces list, easy enough to sum its elements manually -}
-    problem9 :: [(Int, Int, Int)]
-    problem9 = [(a, b, c) | (a, b, c) <- pythTrips, a + b + c == 1000]
+    for the pythagorean triplet a + b + c = 1000, find the product abc -}
+    problem9 :: Int
+    problem9 = a * b * c
+        where (a, b, c) = head([(a, b, c) | (a, b, c) <- pythTrips, a + b + c == 1000])
