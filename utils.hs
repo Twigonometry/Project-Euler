@@ -14,4 +14,4 @@ module Utils where
     fibs = 1 : 1 : zipWith (+) fibs (tail fibs)
 
     pythTrips :: [(Int, Int, Int)]
-    pythTrips = [(a, b, c) | a <- [1..1000], b <- [1..1000], c <- [0..1000], a^2 + b^2 == c^2 ]
+    pythTrips = [(a, b, c) | c <- [1..], b <- [2..c-1], a <- [0..b-1], a^2 + b^2 == c^2 ]
