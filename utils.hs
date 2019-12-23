@@ -15,3 +15,14 @@ module Utils where
 
     pythTrips :: [(Int, Int, Int)]
     pythTrips = [(a, b, c) | c <- [1..], b <- [2..c-1], a <- [0..b-1], a^2 + b^2 == c^2 ]
+
+    {- recursively build collatz sequence
+    base case: a 1 is reached -}
+    collatz :: Int -> [Int]
+    collatz n | n == 1 = [1]
+              | otherwise = n:(collatz (collatzSucc n))
+
+    --successor of an integer in collatz sequence
+    collatzSucc :: Int -> Int
+    collatzSucc n | n `mod` 2 == 0 = n `div` 2
+                  | otherwise = 3*n + 1
