@@ -1,0 +1,20 @@
+Useful links
+
+===Primes===
+
+Primality tests:
+https://www.rookieslab.com/posts/fastest-way-to-check-if-a-number-is-prime-or-not
+
+Prime factorisation:
+https://stackoverflow.com/questions/4643647/fast-prime-factorization-module
+https://stackoverflow.com/questions/15347174/python-finding-prime-factors
+
+===Pythagorean triples===
+https://en.wikipedia.org/wiki/Tree_of_primitive_Pythagorean_triples
+
+===Fibonacci===
+https://stackoverflow.com/questions/43896683/sum-of-first-n-fibonacci-numbers-haskell
+https://stackoverflow.com/questions/44002178/how-to-make-this-fibonacci-function-faster
+https://www.nayuki.io/page/fast-fibonacci-algorithms
+https://stackoverflow.com/questions/18172257/efficient-calculation-of-fibonacci-series
+https://stackoverflow.com/questions/1105765/generating-fibonacci-numbers-in-haskell
