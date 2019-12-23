@@ -1,3 +1,6 @@
+""" Author: Mac Goodwin
+Project Euler solutions in Python """
+
 import numpy as np
 import pyutils
 

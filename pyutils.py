@@ -1,3 +1,6 @@
+""" Author: Mac Goodwin
+Project Euler utility functions in Python """
+
 import math
 
 def isPrime(n):
