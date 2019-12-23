@@ -3,6 +3,8 @@ Assorted solutions for Project Euler problems -}
 
 module Solutions where
     import Utils
+    import Data.List (maximumBy)
+    import Data.Function (on)
 
     {- problem 1
     sum of all multiples of 3 and 5 below n -}
@@ -25,3 +27,8 @@ module Solutions where
     problem9 :: Int
     problem9 = a * b * c
         where (a, b, c) = head([(a, b, c) | (a, b, c) <- pythTrips, a + b + c == 1000])
+
+    {- problem 14
+    which starting number, under 1000000, produces the longest collatz sequence? -}
+    problem14 :: Int
+    problem14 =  head(maximumBy (compare `on` length) (map collatz [1..1000000]))
