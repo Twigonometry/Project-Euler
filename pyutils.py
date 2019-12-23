@@ -13,8 +13,10 @@ def isPrime(n):
         return False
     else:
         #check if divisible by odd numbers up to root n
-        root = math.floor(math.sqrt(n))
-        for i in range(3, root + 2, 2):
+        i = 3
+        while i*i <= n:
             if n % i == 0:
                 return False
+            i+=2
         return True
+        

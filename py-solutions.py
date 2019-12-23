@@ -3,6 +3,7 @@ Project Euler solutions in Python """
 
 import numpy as np
 import pyutils
+from timeit import default_timer as timer
 
 #we can use memoization to tabulate previously calculated fibs
 #source: https://stackoverflow.com/questions/18172257/efficient-calculation-of-fibonacci-series
@@ -46,6 +47,9 @@ def nPrimes(n):
 def main():
     #print(pyutils.isPrime(9))
     #print(pyutils.isPrime(15))
-    print(nPrimes(50))
+    ts = timer()
+    #print(nPrimes(50))
+    print(pyutils.isPrime(5001))
+    print(timer() - ts)
 
 main()
