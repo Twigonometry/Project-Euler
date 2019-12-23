@@ -2,6 +2,8 @@
 Project Euler utility functions in Python """
 
 import math
+import numpy as np
+from timeit import default_timer as timer
 
 def isPrime(n):
     if n == 1:
@@ -20,3 +22,16 @@ def isPrime(n):
             i+=2
         return True
         
+#we can use memoization to tabulate previously calculated fibs
+#source: https://stackoverflow.com/questions/18172257/efficient-calculation-of-fibonacci-series
+def fibMemo(n, computed = {1: 1, 2: 2}):
+    if n not in computed:
+        computed[n] = fibMemo(n-1, computed) + fibMemo(n-2, computed)
+    return computed[n]
+
+#or we can use a matrix representation of fibonacci numbers
+#source: https://www.nayuki.io/page/fast-fibonacci-algorithms
+def fibMatrix(n):
+    mat = np.array([[1,1],[1,0]])
+    matN = np.linalg.matrix_power(mat, n)
+    return matN[0,1]
