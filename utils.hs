@@ -34,10 +34,27 @@ module Utils where
     --pair of coordinates
     type LatticeCoord = (Int, Int)
 
-    --move right one step
-    latticeRight :: LatticeCoord -> LatticeCoord
-    latticeRight (x, y) = (x + 1, y)
+    --move either right or down one step    
+    makeMove :: LatticeCoord -> Char -> LatticeCoord
+    makeMove (x, y) c | c == 'R' = (x + 1, y)
+                      | c == 'D' = (x, y + 1)
 
-    --move down one step
-    latticeDown :: LatticeCoord -> LatticeCoord
-    latticeDown (x, y) = (x, y + 1)
+    --find solution: build list of moves, add to list of solutions
+    --can only take a move if not already at 20 (bottom-right corner)
+    
+    --given a coordinate, return list of possible moves (R for right, D for down)
+    possibleMoves :: LatticeCoord -> [Char]
+    possibleMoves (x, y) | x < 20 && y < 20 = ['R', 'D']
+                         | x < 20 = ['R']
+                         | y < 20 = ['D']
+                         | otherwise = []
+
+    --follow all possible starting moves
+    findSolutions :: LatticeCoord -> [[Char]]
+    findSolutions (x, y) = [followMoves (x, y) firstMove | firstMove <- (possibleMoves (x, y))]
+
+    --recursive function to follow all possible moves from a coordinate to (20, 20)
+    --dummy function for now just returns the move
+    --in future will pass result of move to itself with new possible moves
+    followMoves :: LatticeCoord -> Char -> [Char]
+    followMoves (x, y) move = [move]
