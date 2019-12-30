@@ -26,3 +26,18 @@ module Utils where
     collatzSucc :: Int -> Int
     collatzSucc n | n `mod` 2 == 0 = n `div` 2
                   | otherwise = 3*n + 1
+
+    {- lattice paths (problem 15)
+    define coordinate structure
+    and define method for advancing -}
+
+    --pair of coordinates
+    type LatticeCoord = (Int, Int)
+
+    --move right one step
+    latticeRight :: LatticeCoord -> LatticeCoord
+    latticeRight (x, y) = (x + 1, y)
+
+    --move down one step
+    latticeDown :: LatticeCoord -> LatticeCoord
+    latticeDown (x, y) = (x, y + 1)

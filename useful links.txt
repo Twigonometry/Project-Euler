@@ -4,6 +4,7 @@ Useful links
 
 Primality tests:
 https://www.rookieslab.com/posts/fastest-way-to-check-if-a-number-is-prime-or-not
+https://www.geeksforgeeks.org/python-program-to-check-whether-a-number-is-prime-or-not/
 
 Prime factorisation:
 https://stackoverflow.com/questions/4643647/fast-prime-factorization-module
