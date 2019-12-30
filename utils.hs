@@ -50,11 +50,12 @@ module Utils where
                          | otherwise = []
 
     --follow all possible starting moves
-    findSolutions :: LatticeCoord -> [LatticeCoord]
+    findSolutions :: LatticeCoord -> [[Char]]
     findSolutions (x, y) = [followMoves (x, y) firstMove | firstMove <- (possibleMoves (x, y))]
 
     --recursive function to follow all possible moves from a coordinate to (20, 20)
     --dummy function for now just returns the move
     --in future will pass result of move to itself with new possible moves
-    followMoves :: LatticeCoord -> Char -> LatticeCoord
-    followMoves (x, y) move = makeMove (x, y) move
+    followMoves :: LatticeCoord -> Char -> [Char]
+    followMoves (20, 20) _ = []
+    followMoves (x, y) move = move:(followMoves (makeMove (x, y) move) (head(possibleMoves (x, y))))
