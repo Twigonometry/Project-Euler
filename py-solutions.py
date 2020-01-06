@@ -15,6 +15,21 @@ def problem2():
 
     return sum
 
+def problem5():
+    i = 20
+    while True:
+        #if testing multiples of 20, only need to test non-factors of 20
+        for j in [3, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19]:
+            if i % j != 0:
+                #stop testing if not divisible
+                break
+            elif j == 19:
+                print("solution: ", i)
+                return i
+        #only test multiples of 20
+        i+=20
+
+
 def problem9():
     for a in range(1, 1000):
         for b in range(1, 1000):
@@ -29,6 +44,6 @@ def nPrimes(n):
             print(i)
 
 def main():
-    print("Hello there")
+    print(problem5())
 
 main()
