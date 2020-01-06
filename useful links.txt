@@ -19,3 +19,6 @@ https://stackoverflow.com/questions/44002178/how-to-make-this-fibonacci-function
 https://www.nayuki.io/page/fast-fibonacci-algorithms
 https://stackoverflow.com/questions/18172257/efficient-calculation-of-fibonacci-series
 https://stackoverflow.com/questions/1105765/generating-fibonacci-numbers-in-haskell
+
+==Combinatorics==
+https://betterexplained.com/articles/navigate-a-grid-using-combinations-and-permutations/

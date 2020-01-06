@@ -28,7 +28,8 @@ module Utils where
                   | otherwise = 3*n + 1
                   
     --combinations (n choose r)
+    --taken from https://stackoverflow.com/questions/6806946/built-in-factorial-function-in-haskell
     nCr :: Int -> Int -> Int
-    --nCr n r = product [1..n] `div` (product [1..r] * product [1..(n-r)])
-    nCr n r = product [1..40] `div` (product [1..20] * product [1..20])
-    --product [1..40] `div` (product [1..20] * product [1..20])
+    nCr _ 0 = 1
+    nCr 0 _ = 0
+    nCr n r = nCr (n-1) (r-1) * n `div` r
