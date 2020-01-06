@@ -26,36 +26,9 @@ module Utils where
     collatzSucc :: Int -> Int
     collatzSucc n | n `mod` 2 == 0 = n `div` 2
                   | otherwise = 3*n + 1
-
-    {- lattice paths (problem 15)
-    define coordinate structure
-    and define method for advancing -}
-
-    --pair of coordinates
-    type LatticeCoord = (Int, Int)
-
-    --move either right or down one step    
-    makeMove :: LatticeCoord -> Char -> LatticeCoord
-    makeMove (x, y) c | c == 'R' = (x + 1, y)
-                      | c == 'D' = (x, y + 1)
-
-    --find solution: build list of moves, add to list of solutions
-    --can only take a move if not already at 20 (bottom-right corner)
-    
-    --given a coordinate, return list of possible moves (R for right, D for down)
-    possibleMoves :: LatticeCoord -> [Char]
-    possibleMoves (x, y) | x < 20 && y < 20 = ['R', 'D']
-                         | x < 20 = ['R']
-                         | y < 20 = ['D']
-                         | otherwise = []
-
-    --follow all possible starting moves
-    findSolutions :: LatticeCoord -> [[Char]]
-    findSolutions (x, y) = [followMoves (x, y) firstMove | firstMove <- (possibleMoves (x, y))]
-
-    --recursive function to follow all possible moves from a coordinate to (20, 20)
-    --dummy function for now just returns the move
-    --in future will pass result of move to itself with new possible moves
-    followMoves :: LatticeCoord -> Char -> [Char]
-    followMoves (20, 20) _ = []
-    followMoves (x, y) move = move:(followMoves (makeMove (x, y) move) (head(possibleMoves (x, y))))
+                  
+    --combinations (n choose r)
+    nCr :: Int -> Int -> Int
+    --nCr n r = product [1..n] `div` (product [1..r] * product [1..(n-r)])
+    nCr n r = product [1..40] `div` (product [1..20] * product [1..20])
+    --product [1..40] `div` (product [1..20] * product [1..20])

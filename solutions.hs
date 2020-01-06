@@ -21,7 +21,7 @@ module Solutions where
     --solution using infinite list of fibs
     problem2' :: Int -> Int
     problem2' n = sum([x | x <- fibs, x < n, x `mod` 2 == 0])
-
+    
     {- problem 9
     for the pythagorean triplet a + b + c = 1000, find the product abc -}
     problem9 :: Int
@@ -32,3 +32,10 @@ module Solutions where
     which starting number, under 1000000, produces the longest collatz sequence? -}
     problem14 :: Int
     problem14 =  head(maximumBy (compare `on` length) (map collatz [1..1000000]))
+
+    {- problem 15
+    number of paths through a 20x20 grid, being limited to down and right
+    using combinatoric approach, it is combinations of 20 right and 20 down
+    i.e. 40 choose 20 -}
+    problem15 :: Int
+    problem15 = nCr 40 20
