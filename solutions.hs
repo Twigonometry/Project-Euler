@@ -27,6 +27,13 @@ module Solutions where
     by all of the numbers from 1 to n -}
     problem5 :: Int -> [Int]
     problem5 n = [i | i <- [1..500000000000000], and(predOverList1 (\x -> i `mod` x == 0) [1..n])]
+
+    {- problem 6
+    Find the difference between the sum of the squares of the first one hundred
+    natural numbers and the square of the sum
+    -}
+    problem6 :: Int
+    problem6 = (sum [1..100])^2 - sum (map (\x -> x*x) [1..100])
     
     {- problem 9
     for the pythagorean triplet a + b + c = 1000, find the product abc -}

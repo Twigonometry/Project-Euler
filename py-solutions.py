@@ -24,11 +24,9 @@ def problem5():
                 #stop testing if not divisible
                 break
             elif j == 19:
-                print("solution: ", i)
                 return i
         #only test multiples of 20
         i+=20
-
 
 def problem9():
     for a in range(1, 1000):
