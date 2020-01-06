@@ -22,3 +22,4 @@ https://stackoverflow.com/questions/1105765/generating-fibonacci-numbers-in-hask
 
 ==Combinatorics==
 https://betterexplained.com/articles/navigate-a-grid-using-combinations-and-permutations/
+https://stackoverflow.com/questions/6806946/built-in-factorial-function-in-haskell
