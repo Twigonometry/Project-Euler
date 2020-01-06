@@ -21,6 +21,12 @@ module Solutions where
     --solution using infinite list of fibs
     problem2' :: Int -> Int
     problem2' n = sum([x | x <- fibs, x < n, x `mod` 2 == 0])
+
+    {- problem 5
+    what is the smallest possible number that is evenly divisible
+    by all of the numbers from 1 to n -}
+    problem5 :: Int -> [Int]
+    problem5 n = [i | i <- [1..500000000000000], and(predOverList1 (\x -> i `mod` x == 0) [1..n])]
     
     {- problem 9
     for the pythagorean triplet a + b + c = 1000, find the product abc -}
