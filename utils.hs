@@ -26,6 +26,12 @@ module Utils where
     collatzSucc :: Int -> Int
     collatzSucc n | n `mod` 2 == 0 = n `div` 2
                   | otherwise = 3*n + 1
+
+    --map a predicate function over a list
+    --this version takes a predicate that takes 1 integer argument
+    --usage: pass an anonymous function such as predOverList1 (\x -> x > 0) [-1, 0, 1]
+    predOverList1 :: (Int -> Bool) -> [Int] -> [Bool]
+    predOverList1 f xs = map f xs
                   
     --combinations (n choose r)
     --taken from https://stackoverflow.com/questions/6806946/built-in-factorial-function-in-haskell
